@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<title>{{ accio }} Terrassa</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='estils.css') }}">
+</head>
+<body>
+  <h2>{{ accio }} Terrassa</h2>
+  <form method="post">
+    <input name="emplacament" placeholder="Emplaçament" value="{{ terrassa.emplacament or '' }}"><br>
+    <input name="taules" placeholder="Taules" value="{{ terrassa.taules or '' }}"><br>
+    <input name="cadires" placeholder="Cadires" value="{{ terrassa.cadires or '' }}"><br>
+    <input name="latitud" placeholder="Latitud" value="{{ terrassa.latitud or '' }}"><br>
+    <input name="longitud" placeholder="Longitud" value="{{ terrassa.longitud or '' }}"><br>
+    <button type="submit">{{ accio }}</button>
+  </form>
+  <a href="{{ url_for('inici') }}">Tornar</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<title>Terrasses</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='estils.css') }}">
+</head>
+<body>
+  <h2>Llista de Terrasses</h2>
+  <a href="{{ url_for('afegir') }}">Afegir nova terrassa</a> | 
+  <a href="{{ url_for('logout') }}">Tancar sessió</a>
+  <ul>
+    {% for t in terrasses %}
+      <li>
+        {{ t.emplacament }} — Taules: {{ t.taules }}, Cadires: {{ t.cadires }}
+        [<a href="{{ url_for('editar', id=t.id_terrassa) }}">Editar</a>]
+        [<a href="{{ url_for('eliminar', id=t.id_terrassa) }}">Eliminar</a>]
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

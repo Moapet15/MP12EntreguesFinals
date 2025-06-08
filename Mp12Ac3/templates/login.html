@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<title>Iniciar Sessió</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='estils.css') }}">
+</head>
+<body>
+  <h2>Iniciar Sessió</h2>
+  <form method="post">
+    <input type="text" name="username" placeholder="Nom d'usuari"><br>
+    <input type="password" name="contrasenya" placeholder="Contrasenya">
+    <button type="submit">Entrar</button>
+  </form>
+
+  <p>Encara no hi ha cap usuari? <a href="{{ url_for('afegir_usuari_inicial') }}">Crear primer usuari</a></p>
+</body>
+</html>

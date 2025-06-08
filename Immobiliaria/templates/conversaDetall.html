@@ -1,0 +1,25 @@
+<body>
+    {% include 'header.html' %}
+
+    <div class="container my-4">
+        <h2>{{ _('Conversa amb') }} {{ conversa.usuari_email }} - {{ conversa.finca_referencia }}</h2>
+        <p><strong>{{ conversa.finca_info.tipusHabitatge }}, {{ conversa.finca_info.provincia }}</strong></p>
+
+        <div class="missatges mb-4">
+            {% for missatge in conversa.missatges %}
+                <div class="{% if missatge.emissor == user.email %}text-end{% else %}text-start{% endif %} mb-3">
+                    <span class="badge bg-secondary">{{ missatge.emissor }}</span>
+                    <p class="m-0">{{ missatge.contingut }}</p>
+                    <small class="text-muted">{{ missatge.data }}</small>
+                </div>
+            {% endfor %}
+        </div>
+
+        <a href="{{ url_for('administrarFinques') }}" class="btn btn-primary">
+            ← {{ _('Tornar a Administrar Finques') }}
+        </a>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,92 @@
+<body>
+    {% include 'header.html' %}
+
+    <section class="busqueda" id="busqueda" alt="busqueda">
+        <div class="contenidor-busqueda">
+            <form action="" method="GET" class="formulari">
+                <fieldset>
+                    <legend>{{ _('Filtra per característiques:') }}</legend>
+                    <div class="form-group">
+                        <label for="tipus">{{ _("Tipus d'habitatge:") }}</label>
+                        <select name="tipus" id="tipus">
+                            <option value="">{{ _('Selecciona un tipus') }}</option>
+                            <option value="pis">{{ _('Pis') }}</option>
+                            <option value="casa">{{ _('Casa') }}</option>
+                            <option value="xalet">{{ _('Xalet') }}</option>
+                            <option value="apartament">{{ _('Apartament') }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="preu_minim">{{ _('Preu mínim (€):') }}</label>
+                        <input type="number" name="preu_minim" id="preu_minim" placeholder="{{ _('Preu mínim') }}" min="0" step="1000">
+                    </div>
+                    <div class="form-group">
+                        <label for="preu_maxim">{{ _('Preu màxim (€):') }}</label>
+                        <input type="number" name="preu_maxim" id="preu_maxim" placeholder="{{ _('Preu màxim') }}" min="0" step="1000">
+                    </div>
+                    <div class="form-group">
+                        <label for="poblacio">{{ _('Població:') }}</label>
+                        <input type="text" name="poblacio" id="poblacio" placeholder="{{ _('Població') }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="habitacions">{{ _("Nombre d'habitacions:") }}</label>
+                        <input type="number" name="habitacions" id="habitacions" min="1" max="10" placeholder="{{ _('Habitacions') }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="banys">{{ _('Nombre de banys:') }}</label>
+                        <input type="number" name="banys" id="banys" min="1" max="5" placeholder="{{ _('Banys') }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="superficie_minima">{{ _('Superfície mínima (m²):') }}</label>
+                        <input type="number" name="superficie_minima" id="superficie_minima" min="0" step="10" placeholder="{{ _('Superfície mínima') }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="superficie_maxima">{{ _('Superfície màxima (m²):') }}</label>
+                        <input type="number" name="superficie_maxima" id="superficie_maxima" min="0" step="10" placeholder="{{ _('Superfície màxima') }}">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-filtrar">{{ _('Filtrar') }}</button>
+                    </div>
+                </fieldset>
+            </form>
+
+            <h2>{{ _('Finques rustiques') }}</h2>
+
+            {% if immobles %}
+            <div class="carousel-container">
+                <ul class="llistaImmobles" id="llistaImmobles">
+                    {% for immoble in immobles %}
+                    <li>
+                        <div class="imatges-immoble">
+                            {% set imatges = immoble.imatges.split(", ") %}
+                            {% if imatges[0] %}
+                            <div class="imatge-principal">
+                                <img src="{{ url_for('static', filename=imatges[0]) }}" alt="{{ _('Imatge principal') }}" class="img-gran" />
+                            </div>
+                            <div class="miniatures-scroll">
+                                {% for imatge in imatges %}
+                                <img src="{{ url_for('static', filename=imatge) }}" alt="{{ _('Miniatura') }} {{ loop.index }}" class="miniatura" />
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <a href="{{ url_for('finca', id=immoble.id) }}" style="text-decoration: none; color: inherit;">
+                            <h3 id="referencia">{{ immoble.referencia }}</h3>
+                            <p>{{ _('Tipus:') }} {{ immoble.tipusHabitatge }}</p>
+                            <p>{{ _('Població:') }} {{ immoble.poblacio }}</p>
+                            <p>{{ _('Preu:') }} {{ immoble.preu }} €</p>
+                            <p class="descripciMinimitzada">{{ _('Descripció:') }} {{ immoble.descripcio }}</p>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% else %}
+            <p>{{ _('No hi ha immobles disponibles.') }}</p>
+            {% endif %}
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+</body>
+</html>

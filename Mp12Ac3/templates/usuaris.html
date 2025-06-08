@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<title>Usuaris</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='estils.css') }}">
+</head>
+<body>
+  <h2>Gestió d'Usuaris</h2>
+  <a href="{{ url_for('afegir_usuari') }}">Afegir usuari</a> |
+  <a href="{{ url_for('inici') }}">Tornar</a>
+  <ul>
+    {% for u in usuaris %}
+      <li>
+        {{ u.username }}
+        [<a href="{{ url_for('editar_usuari', id=u.id_usuari) }}">Editar</a>]
+        [<a href="{{ url_for('eliminar_usuari_route', id=u.id_usuari) }}">Eliminar</a>]
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

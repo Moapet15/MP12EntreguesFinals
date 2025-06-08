@@ -1,0 +1,76 @@
+<body>
+    {% include 'header.html' %}
+
+    <!-- Secció Carrusel d'Imatges -->
+    <section class="carrusel">
+        <button class="carrusel-btn prev">&lt;</button>
+        <div class="carrusel-viewport">
+            <div class="carrusel-images">
+                <img src="/static/Imatges/Falset_0.jpg" alt="Imatge 1">
+                <img src="/static/Imatges/priorat.jpg" alt="Imatge 2">
+                <img src="/static/Imatges/T29_RLM4230BX0_2.jpg" alt="Imatge 3">
+                <img src="/static/Imatges/Montanas-de-Prades.jpg" alt="Imatge 4">
+                <img src="/static/Imatges/Scala_Dei.webp" alt="Imatge 5">
+                <img src="/static/Imatges/margalef.jpg" alt="Imatge 6">
+            </div>
+        </div>
+        <button class="carrusel-btn next">&gt;</button>
+    </section>
+
+    <!-- Secció Qui Som -->
+    <section id="qui-som" class="qui-som" alt="qui-som">
+        <h2>{{ translations["qui_som_titol"] }}</h2>
+        <p>{{ translations["qui_som_paragraf1"] }}</p>
+        <p>{{ translations["qui_som_paragraf2"] }}</p>
+
+        <h3>{{ translations["serveis_titol"] }}</h3>
+        <ul>
+            <li><strong>{{ translations["servei_compravenda"] }}</strong>: {{ translations["desc_compravenda"] }}</li>
+            <li><strong>{{ translations["servei_lloguer"] }}</strong>: {{ translations["desc_lloguer"] }}</li>
+            <li><strong>{{ translations["servei_taxacions"] }}</strong>: {{ translations["desc_taxacions"] }}</li>
+            <li><strong>{{ translations["servei_cedules"] }}</strong>: {{ translations["desc_cedules"] }}</li>
+            <li><strong>{{ translations["servei_obres"] }}</strong>: {{ translations["desc_obres"] }}</li>
+        </ul>
+
+        <p>{{ translations["qui_som_paragraf3"] }}</p>
+    </section>
+
+    <!-- Secció Informació de l'Agència -->
+    <section id="informacio-agencia">
+        <h2>{{ translations["info_agencia_titol"] }}</h2>
+        <div class="info-container">
+            <div class="info">
+                <h3>{{ translations["info_horari"] }}</h3>
+                <p>{{ translations["info_horari_text"] }}</p>
+            </div>
+            <div class="info">
+                <h3>{{ translations["info_localitzacio"] }}</h3>
+                <p>{{ translations["info_localitzacio_text"] }}</p>
+            </div>
+            <div class="info">
+                <h3>{{ translations["info_contacte"] }}</h3>
+                <p>{{ translations["info_telefon"] }}</p>
+                <p>{{ translations["info_email"] }}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulari de Registre -->
+    <section id="formulari-registre">
+        <h2>{{ translations["newsletter_titol"] }}</h2>
+        <form action="" method="POST">
+            <label for="nom">{{ translations["formulari_nom"] }}</label>
+            <input type="text" id="nom" name="nom" required>
+
+            <label for="email">{{ translations["formulari_email"] }}</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="submit">{{ translations["formulari_submit"] }}</button>
+        </form>
+    </section>
+
+    {% include 'footer.html' %}
+
+    <canvas id="snowCanvas"></canvas>
+    <script src="{{ url_for('static', filename='snow.js') }}"></script>
+</body>

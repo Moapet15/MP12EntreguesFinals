@@ -1,0 +1,88 @@
+<body>
+    {% include 'header.html' %}
+    <section class="targetes" id="targetes">
+        <div class="servei" id="serveiLloguer" onclick="mostrarInfoLloguers()">
+            <h1>{{ _('Servei de Lloguer') }}</h1>
+            <img src="/static/Imatges/Lloguer.png" alt="{{ _('Servei de lloguer') }}">
+            <p>
+                {{ _('Descobreix el nostre servei de gestió d’arrendaments pensat per als propietaris que busquen tranquil·litat i eficiència.') }} <br>
+                {{ _('Ens encarreguem de tot: des de la captació d’inquilins fins al seguiment i manteniment de les propietats.') }} <br>
+                {{ _('Sigui quina sigui la mida del teu patrimoni, maximitzem els teus ingressos amb un enfocament professional i personalitzat.') }}
+            </p>
+        </div>
+        <div class="servei" id="serveiValoracio"  onclick="mostrarInfoValoracio()">
+            <h1>{{ _('Servei de Valoració') }}</h1>
+            <img src="/static/Imatges/Evaluacio.png" alt="{{ _('Servei de valoració') }}">
+            <p>
+                {{ _('Estudiem i avaluem cada immoble amb cura, tenint en compte els criteris més actuals i competitius del mercat.') }} <br>
+                {{ _('Amb el nostre suport, descobriràs el veritable potencial de les teves propietats, assegurant-te d’obtenir el màxim rendiment mentre garantim una gestió eficient i adaptada a les teves necessitats.') }}
+            </p>
+        </div>
+    </section>
+    
+    <section class="webLloguer" id="webLloguer" alt="webLloguer">
+        <h1>{{ _('Immobles per a Lloguer') }}</h1>
+        <img src="/static/Imatges/Lloguer.png" alt="{{ _('Servei de lloguer') }}">
+        <h1>{{ _("Servei de Gestió d'Arrendaments") }}</h1>
+        <p>
+            {{ _("Disposem d’un servei de Gestió d'Arrendaments dirigit a propietaris amb una o més cases.") }}
+        </p>
+        <p>
+            {{ _("El nostre servei inclou la divulgació de l'immoble al nostre lloc web i diversos portals, podent triar entre els diversos serveis:") }}
+        </p>
+        <ul>
+            <li><strong>{{ _("Neteja de l'immoble;") }}</strong></li>
+            <li><strong>{{ _("Petites obres;") }}</strong></li>
+            <li><strong>{{ _("Manteniment de Piscina i Jardí;") }}</strong></li>
+            <li><strong>{{ _("Recepció d'Huéspedes;") }}</strong></li>
+        </ul>
+        <p>
+            {{ _("Fem pressupost a la mida de les vostres necessitats.") }} <span class="important">{{ _('Poseu-vos en contacte amb nosaltres!') }}</span>
+        </p>
+        {% include 'formulari_contacte.html' %}
+    </section>
+
+    <section class="webValoracio" id="webValoracio" alt="webValoracio">
+        <h1>{{ _("Evaluació d'Immobles") }}</h1>
+        <img src="/static/Imatges/Evaluacio.png" alt="{{ _('Servei de valoració') }}">
+        <h1>{{ _("Avaluació d'Immobles") }}</h1>
+        <p>
+            {{ _("Per avaluar un immoble usat, es tenen en compte diversos factors com la zona geogràfica, la naturalesa de l'immoble, el tipus de l'immoble, el seu estat, la seva àrea i l'estat del mercat.") }}
+        </p>
+        <p>
+            {{ _("Els criteris i mètodes utilitzats en l'avaluació d'un immoble no són gaire clars. Els factors que influencien generalment el valor d'un immoble són:") }}
+        </p>
+        <ul>
+            <li><strong>{{ _("La ubicació") }}</strong> ({{ _("incloent-hi el pis, la vista, l'orientació solar i les accessibilitats") }})</li>
+            <li><strong>{{ _("El terreny") }}</strong></li>
+            <li><strong>{{ _("La tipologia i la disposició de l'immoble") }}</strong></li>
+            <li><strong>{{ _("La qualitat de la construcció") }}</strong></li>
+            <li><strong>{{ _("Els acabats i equips disponibles") }}</strong></li>
+            <li><strong>{{ _("La data de construcció") }}</strong></li>
+            <li><strong>{{ _("L'estat de conservació") }}</strong></li>
+            <li><strong>{{ _("El mercat") }}</strong> ({{ _("la demanda i l'oferta") }})</li>
+            <li><strong>{{ _("L'aparcament, piscina, ascensor, espais verds") }}</strong></li>
+        </ul>
+        <h2>{{ _("Avaluadors d'Immobles") }}</h2>
+        <p>
+            {{ _("El més indicat per avaluar el valor d'un immoble utilitzat serà cercar una empresa o avaluador d'immobles especialitzat. Aquests aconsegueixen donar una avaluació completa, prestant una ajuda preciosa, sobretot en el criteri comparatiu de mercat. Però ràpidament (i gratuïtament), també podeu fer comparacions amb els nostres immobles en divulgació.") }}
+        </p>
+        <h2>{{ _("Documents necessaris per rebre una avaluació:") }}</h2>
+        <ul>
+            <li><strong>{{ _("Planta de la propietat") }}</strong></li>
+            <li><strong>{{ _("Carnet predial") }}</strong></li>
+            <li><strong>{{ _("Registre de la conservatòria") }}</strong></li>
+            <li><strong>{{ _("Llicències cambreres") }}</strong></li>
+        </ul>
+        <p>
+            {{ _("Abans de comprar o vendre un immoble, ha de procurar assolir una valoració del seu valor.") }}
+        </p>
+        <p class="important">
+            {{ _("Contacti'ns i ajudem!") }}
+        </p>
+        {% include 'formulari_contacte.html' %}
+    </section>
+
+    {% include 'footer.html' %}
+</body>
+</html>

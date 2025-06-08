@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<title>{{ accio }} Usuari</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='estils.css') }}">
+</head>
+<body>
+  <h2>{{ accio }} Usuari</h2>
+  <form method="post">
+    <input name="username" placeholder="Nom d'usuari" value="{{ usuari.username or '' }}"><br>
+    {% if accio in ['Afegir', 'Crear'] %}
+      <input type="password" name="contrasenya" placeholder="Contrasenya"><br>
+    {% endif %}
+    <button type="submit">{{ accio }}</button>
+  </form>
+  <a href="{{ url_for('llistar_usuaris') }}">Tornar</a>
+</body>
+</html>
