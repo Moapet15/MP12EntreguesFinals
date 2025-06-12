@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jungle Scape</title>
+  <link rel="stylesheet" href="/estils.css" />
+  <script src="joc.js" async></script>
+</head>
+<body>
+
+  <div id="campDeJoc" class="campDeJoc"></div>
+
+  <div id="laretal2" class="laterals">
+    <div id="temps">Temps: 0s</div>
+    <div id="punts">Punts: 0</div>
+    <div id="videsContainer"></div>
+  </div>
+
+  <audio id="soJungla" autoplay loop>
+    <source src="assets/audio/nom_del_fitxer.mp3" type="audio/mpeg" />
+    El teu navegador no suporta l'element d'àudio.
+  </audio>
+  <button onclick="document.getElementById('soJungla').play()" hidden>Activar so de jungla</button>
+
+</body>
+</html>

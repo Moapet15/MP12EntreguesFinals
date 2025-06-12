@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+  <defs>
+    <!-- 🧍 Sprite per al personatge (heroi) -->
+    <symbol id="heroi" viewBox="0 0 100 100">
+    <!-- Cos -->
+    <ellipse cx="50" cy="80" rx="15" ry="20" fill="#a0522d" />
+
+    <!-- Cara -->
+    <circle cx="50" cy="50" r="25" fill="#a0522d" />
+
+    <!-- Morro -->
+    <ellipse cx="50" cy="60" rx="12" ry="8" fill="#deb887" />
+
+    <!-- Ulls -->
+    <circle cx="42" cy="45" r="4" fill="white" />
+    <circle cx="58" cy="45" r="4" fill="white" />
+    <circle cx="42" cy="45" r="1.5" fill="black" />
+    <circle cx="58" cy="45" r="1.5" fill="black" />
+
+    <!-- Somriure -->
+    <path d="M 42 65 Q 50 72 58 65" stroke="black" stroke-width="1.5" fill="none" />
+
+    <!-- Orelles -->
+    <circle cx="25" cy="50" r="7" fill="#a0522d" />
+    <circle cx="75" cy="50" r="7" fill="#a0522d" />
+
+    <!-- Braços -->
+    <line x1="35" y1="75" x2="25" y2="90" stroke="#a0522d" stroke-width="4" />
+    <line x1="65" y1="75" x2="75" y2="90" stroke="#a0522d" stroke-width="4" />
+
+    <!-- Cames -->
+    <line x1="45" y1="95" x2="45" y2="100" stroke="#a0522d" stroke-width="4" />
+    <line x1="55" y1="95" x2="55" y2="100" stroke="#a0522d" stroke-width="4" />
+  </symbol>
+
+    <!-- 🌴 Sprite per a un tronc d'arbre -->
+    <symbol id="tronc" viewBox="0 0 100 100">
+      <rect x="42" y="30" width="16" height="50" fill="#8B4513" rx="3" />
+      <circle cx="50" cy="30" r="28" fill="url(#fullatgeVerd)" />
+    </symbol>
+
+    <!-- 🪨 Sprite per a una roca -->
+    <symbol id="roca" viewBox="0 0 100 100">
+      <path d="M 25 75 Q 35 40 65 40 Q 80 45 70 75 Z" fill="url(#rocaGradient)" stroke="#333" stroke-width="2"/>
+    </symbol>
+
+    <!-- 🌿 Sprite per a una planta -->
+    <symbol id="planta" viewBox="0 0 100 100">
+      <path d="M50 95 Q40 80 50 65 Q60 80 50 95" fill="url(#verdClar)" />
+      <path d="M50 65 Q45 45 50 25 Q55 45 50 65" fill="url(#verdFosc)" />
+      <circle cx="50" cy="25" r="4" fill="#14532d"/>
+    </symbol>
+
+    <symbol id="cor" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="corGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ff5e5e"/>
+        <stop offset="100%" stop-color="#c0392b"/>
+      </linearGradient>
+      <radialGradient id="corHighlight" cx="50%" cy="30%" r="50%" fx="50%" fy="30%">
+        <stop offset="0%" stop-color="#fff" stop-opacity="0.7"/>
+        <stop offset="100%" stop-color="#ff5e5e" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <g>
+      <!-- Forma clàssica de cor -->
+      <path
+        d="M50 90
+          L15 55
+          A20 20 0 0 1 50 25
+          A20 20 0 0 1 85 55
+          Z"
+        fill="url(#corGradient)"
+        stroke="#900"
+        stroke-width="3"
+        stroke-linejoin="round"
+      />
+      
+      <!-- Reflex brillant per volum -->
+      <path
+        d="M35 35
+          C40 25, 60 25, 65 35
+          C60 30, 40 30, 35 35 Z"
+        fill="url(#corHighlight)"
+      />
+    </g>
+
+    <animateTransform 
+      attributeName="transform" 
+      attributeType="XML" 
+      type="scale" 
+      values="1;1.1;1" 
+      dur="1s" 
+      repeatCount="indefinite" 
+      additive="sum"
+      begin="0s"
+      origin="50 50"
+    />
+  </symbol>
+
+
+    <defs>
+      <linearGradient id="fullatgeVerd" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#2ecc71"/>
+        <stop offset="100%" stop-color="#27ae60"/>
+      </linearGradient>
+
+      <linearGradient id="verdClar" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#A3E635"/>
+        <stop offset="100%" stop-color="#4CAF50"/>
+      </linearGradient>
+
+      <linearGradient id="verdFosc" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#15803D"/>
+        <stop offset="100%" stop-color="#166534"/>
+      </linearGradient>
+
+      <linearGradient id="rocaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#888"/>
+        <stop offset="100%" stop-color="#444"/>
+      </linearGradient>
+
+      <linearGradient id="corGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ff5e5e"/>
+        <stop offset="100%" stop-color="#c0392b"/>
+      </linearGradient>
+    </defs>
+
+  </defs>
+</svg>
