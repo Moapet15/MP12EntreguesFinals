@@ -1,0 +1,6 @@
+mysql-connector-python
+python-dotenv
+Flask
+Flask-Session
+Flask-Babel
+Werkzeug

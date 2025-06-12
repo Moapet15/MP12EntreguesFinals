@@ -1,0 +1,22 @@
+# Fitxers Python compilats
+__pycache__/
+*.py[cod]
+
+# Fitxers de sessió de Flask
+flask_session/
+
+# Fitxers temporals o de sistema
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# Entorns virtuals (si en tens)
+venv/
+.env/
+*.env
+
+# Fitxers de base de dades temporals
+*.sqlite3
+*.db

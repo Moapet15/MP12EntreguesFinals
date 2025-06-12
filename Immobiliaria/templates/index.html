@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ translations['lang_code'] or 'ca' }}">
+<head>
+    <meta charset="UTF-8" />
+    <title>{{ translations["login_title"] }}</title>
+</head>
+<body>
+    <h1>{{ translations["login_heading"] }}</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for msg in messages %}
+            <li style="color: red;">{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <label for="email">{{ translations["login_email"] }}:</label>
+        <input type="text" id="email" name="email" required />
+        <br/>
+        <label for="contrasenya">{{ translations["login_password"] }}:</label>
+        <input type="password" id="contrasenya" name="contrasenya" required />
+        <br/>
+        <button type="submit">{{ translations["login_button"] }}</button>
+    </form>
+</body>
+</html>

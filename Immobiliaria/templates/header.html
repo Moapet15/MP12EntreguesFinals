@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Immobles Priorat</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+        <script src="{{ url_for('static', filename='js/midleWare.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </head>
+<header>
+    <!-- Contenidor del logo de l'empresa -->
+    <div class="contenidorLogoEmpresa" id="contenidorLogoEmpresa">
+        <img src="/static/Imatges/logoEmpresa.png" class="logoEmpresa" id="logoEmpresa" alt="{{ translations['logo_alt'] }}">
+    </div>
+
+    <div class="contenidorMenu" id="contenidorMenu">
+        
+        <h1 class="titolEmpresa" id="titolEmpresa" alt="titolEmpresa">{{ translations['title'] }}</h1>
+        <!-- Menú de navegació -->
+        <ul class="llistaHeader">
+            <li>
+                <a href="{{ url_for('subIndex') }}" id="subIndex" class="clicableLlista">
+                    <p>{{ translations['inici'] }}</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('aboutUs') }}" id="botoQuiSom" class="clicableLlista">
+                    <p>{{ translations['qui_som'] }}</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('serveis') }}" id="botoServeis" class="clicableLlista">
+                    <p>{{ translations['serveis'] }}</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('finquesUrbanes') }}" id="botoFinquesUrbanes" class="clicableLlista">
+                    <p>{{ translations['finques_urbanes'] }}</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('finquesRustiques') }}" id="botoFinquesRustiques" class="clicableLlista">
+                    <p>{{ translations['finques_rustiques'] }}</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('lloguer') }}" id="botoLloguer" class="clicableLlista">
+                    <p>{{ translations['lloguer'] }}</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('contacte') }}" id="botoContacte" class="clicableLlista">
+                    <p>{{ translations['contactans'] }}</p>
+                </a>
+            </li>
+        </ul>            
+        
+
+        <ul class="contacte" id="contacte">
+            <li><button class="botoContacte" id="contacteFix" alt="contacteFix"><p>(+34) 977831709</p></button></li>
+            <li><button class="botoContacte" id="contacteMovil" alt="contacteMovil"><p>(+34) 629014905</p></button></li>
+            <li><button class="botoContacte" id="contacteMail" alt="contacteMail"><p>falset@immoblespriorat.com</p></button></li>
+        </ul>
+    </div>
+
+    <div class="idiomesMesAdmin">
+        <div class="logIn_SignIn">
+            <button onclick="mostrarFormulariLogIn()">Login</button>
+            <button onclick="mostrarFormulariSignIn()">Sign-up</button>
+        </div>
+        <!-- Selecció d'idioma -->
+        <div class="seleccioIdioma" id="seleccioIdioma">
+            <select name="tipus" id="tipus">
+                <option value="ca">Català</option>
+                <option value="es">Castellano</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Formulari de Login -->
+    <form action="{{url_for('logIn')}}" method="POST" class="form-popup" onsubmit="event.preventDefault(); sendDataToBackend('login');" id="login-form">
+        <label for="email">Email:</label>
+        <input type="email" id="login-email" required>
+        
+        <label for="password">Contrasenya:</label>
+        <input type="password" id="login-password" required>
+        
+        <button type="submit">Entrar</button>
+        <button type="button" onclick="closeForm()">Tancar</button>
+    </form>
+
+    <!-- Formulari de Sign-up -->
+    <form action="{{url_for('signIn')}}" method="POST" class="form-popup" onsubmit="event.preventDefault(); sendDataToBackend('signup');" id="signup-form">
+        <label for="nom">Nom:</label>
+        <input type="text" id="signup-nom" required>
+        
+        <label for="new-email">Email:</label>
+        <input type="email" id="signup-email" required>
+        
+        <label for="new-password">Contrasenya:</label>
+        <input type="password" id="signup-password" required>
+        
+        <button type="submit">Registrar-se</button>
+        <button type="button" onclick="closeForm()">Tancar</button>
+    </form>
+    
+</header>
